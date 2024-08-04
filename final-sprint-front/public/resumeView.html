@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alert Page</title>
+  <title>Resume Search Results</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -14,9 +13,7 @@
       <div class="header">
         <div class="titleblock">
           <h1 class="website-name">PrecisionHire Pro</h1>
-          <blockquote class="slogan">
-            “Welcome to efficient hiring!”
-          </blockquote>
+          <blockquote class="slogan">“Welcome to efficient hiring!”</blockquote>
         </div>
         <div class="btns-containerAnB">
           <div class="btns-containerA">
@@ -63,16 +60,8 @@
   <main>
     <div class="outer-container">
       <div class="inner-container1">
-        <div class="alert-div">
-          <script>
-            var heading = "Alert Heading";
-            var message = "Alert message";
-            document.write(`
-              <h2>${alert-heading}</h2>
-              <p>${alert-message}</p>
-            `);
-          </script>
-        </div>
+        <ul id="resume-list">
+        </ul>
       </div>
     </div>
   </main>
@@ -81,16 +70,16 @@
     <div class="footercontentA">
       <div class="social-links">
         <a href="https://www.facebook.com/" class="social-icon">
-          <img src="images/FacebookLogo.png" alt="Facebook">
+          <img src="../images/FacebookLogo.png" alt="Facebook">
         </a>
         <a href="https://www.instagram.com/" class="social-icon">
-          <img src="images/InstagramLogo.png" alt="Instagram">
+          <img src="../images/InstagramLogo.png" alt="Instagram">
         </a>
         <a href="https://twitter.com/home" class="social-icon">
-          <img src="images/TwitterLogo.png" alt="Twitter">
+          <img src="../images/TwitterLogo.png" alt="Twitter">
         </a>
         <a href="https://www.youtube.com/" class="social-icon">
-          <img src="images/YouTubeLogo.png" alt="YouTube">
+          <img src="../images/YouTubeLogo.png" alt="YouTube">
         </a>
       </div>
       <div>
@@ -112,6 +101,16 @@
       </div>
     </div>
   </footer>
-  <script src="script.js"></script>
+
+  <script>
+    var resumes = [];
+    var resumeList = document.getElementById('resume-list');
+    resumes.forEach(resume => {
+      var listItem = document.createElement('li');
+      listItem.innerHTML = `#${resume.resume_id} ${resume.applicantname}<br />
+                            <div class="searchResumeText">${resume.resumetext}</div>`;
+      resumeList.appendChild(listItem);
+    });
+  </script>
 </body>
 </html>

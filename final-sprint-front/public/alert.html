@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume Search</title>
+  <title>Alert Page</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -14,7 +13,9 @@
       <div class="header">
         <div class="titleblock">
           <h1 class="website-name">PrecisionHire Pro</h1>
-          <blockquote class="slogan">“Welcome to efficient hiring!”</blockquote>
+          <blockquote class="slogan">
+            “Welcome to efficient hiring!”
+          </blockquote>
         </div>
         <div class="btns-containerAnB">
           <div class="btns-containerA">
@@ -61,24 +62,16 @@
   <main>
     <div class="outer-container">
       <div class="inner-container1">
-        <h2>Resumé Search</h2>
-        <form action="/resumes/search" method="GET">
-          <label class="searchLabel" for="search">Search by keyword:</label>
-          <input type="text" id="search" name="query" value="" /><br />
-          <label class="searchLabel" for="search-job">Search by job ID:</label>
-          <input type="text" id="search-job" name="job" value="" /><br />
-          <label class="searchLabel" for="database">Database:</label>
-          <select id="database" name="target">
-            <option value="pg">PostgreSQL</option>
-            <option value="m">MongoDB</option>
-            <option value="all">Both</option>
-          </select>
-          <button type="submit">Search</button>
-        </form>
-
-        <p id="results-count">0 results for 'query':</p>
-        <ul id="results-list">
-        </ul>
+        <div class="alert-div">
+          <script>
+            var heading = "Alert Heading";
+            var message = "Alert message";
+            document.write(`
+              <h2>${alert-heading}</h2>
+              <p>${alert-message}</p>
+            `);
+          </script>
+        </div>
       </div>
     </div>
   </main>
@@ -87,16 +80,16 @@
     <div class="footercontentA">
       <div class="social-links">
         <a href="https://www.facebook.com/" class="social-icon">
-          <img src="images/FacebookLogo.png" alt="Facebook">
+          <img src="../images/FacebookLogo.png" alt="Facebook">
         </a>
         <a href="https://www.instagram.com/" class="social-icon">
-          <img src="images/InstagramLogo.png" alt="Instagram">
+          <img src="../images/InstagramLogo.png" alt="Instagram">
         </a>
         <a href="https://twitter.com/home" class="social-icon">
-          <img src="images/TwitterLogo.png" alt="Twitter">
+          <img src="../images/TwitterLogo.png" alt="Twitter">
         </a>
         <a href="https://www.youtube.com/" class="social-icon">
-          <img src="images/YouTubeLogo.png" alt="YouTube">
+          <img src="../images/YouTubeLogo.png" alt="YouTube">
         </a>
       </div>
       <div>
@@ -118,29 +111,5 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    // This script is for populating the dynamic values in the HTML
-    var query = ""; // replace with actual query
-    var job = ""; // replace with actual job ID
-    var target = ""; // replace with actual target
-    var resumes = []; // replace with actual resumes data
-
-    document.getElementById('search').value = query;
-    document.getElementById('search-job').value = job;
-    document.getElementById('database').value = target;
-
-    var resultsCount = document.getElementById('results-count');
-    var resultsList = document.getElementById('results-list');
-    resultsCount.innerText = `${resumes.length} results for '${query}':`;
-
-    resumes.forEach(resume => {
-      var listItem = document.createElement('li');
-      listItem.innerHTML = `#${resume.resume_id} ${resume.applicantname} (source: ${resume.source})<br />
-                            <div class="searchResumeText">${resume.resumetext}</div>`;
-      resultsList.appendChild(listItem);
-    });
-  </script>
-  <script src="script.js"></script>
 </body>
 </html>
