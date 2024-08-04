@@ -6,7 +6,6 @@
   <title>Keyin-SD9-S3-FSDB-FinalSprint</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -61,88 +60,38 @@
   </header>
 
   <main>
-    <div class="outer-container1">
+    <div class="outer-container">
       <div class="inner-container">
-        <form action="/users/signUp" method="post">
+        <form action="/users/signIn" method="post">
           <div class="container">
-            <h1>New User Sign Up</h1>
-
+            <h1>Sign In</h1>
+            <hr />
             <label for="username"><b>Username</b></label>
             <input
               type="text"
-              placeholder="Enter user's first and last name (ex. Jane Doe)"
+              placeholder="Enter username"
               name="username"
-              id="username"
               required
             />
 
-            <label for="position"><b>Position</b></label>
-            <input
-              type="text"
-              placeholder=" Enter position at company (ex. Hiring Manager)"
-              name="position"
-              id="position"
-              required
-            />
-
-            <label for="email"><b>Email</b></label>
-            <input
-              type="text"
-              placeholder="Enter company email"
-              name="email"
-              id="email"
-              required
-            />
-
-            <label for="phone"><b>Phone Number</b></label>
-            <input
-              type="text"
-              placeholder="Enter company phone number (ex. 709-555-5555)"
-              name="phone"
-              id="phone"
-              required
-            />
-
-            <label for="location"><b>Location</b></label>
-            <input
-              type="text"
-              placeholder="Enter primary office address (ex. 1234 Main St.)"
-              name="location"
-              id="location"
-              required
-            />
-
-            <label for="psw"><b>Password</b></label>
+            <label for="password"><b>Password</b></label>
             <input
               type="password"
               placeholder="Enter Password"
               name="password"
-              id="psw"
               required
             />
 
-            <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input
-              type="password"
-              placeholder="Repeat Password"
-              name="psw_repeat"
-              id="psw-repeat"
-              required
-            />
-            <hr />
-            <br />
+            <button type="submit" class="registerbtn">Sign In</button>
+          </div>
+
+          <div class="signin">
             <p>
-              By creating an account you agree to our
-              <a href="#" class="signin-link">Terms & Privacy</a>.
+              Don't have an account?
+              <a href="/users/signUp" class="signin-link">Sign up</a>.
             </p>
-            <button type="submit" class="registerbtn">Sign Up</button>
           </div>
         </form>
-        <div class="container signin">
-          <p>
-            Already have an account? <a href="signin.html" class="signin-link">Sign in</a>.
-          </p>
-        </div>
       </div>
     </div>
   </main>
@@ -151,16 +100,16 @@
     <div class="footercontentA">
       <div class="social-links">
         <a href="https://www.facebook.com/" class="social-icon">
-          <img src="images/FacebookLogo.png" alt="Facebook">
+          <img src="../images/FacebookLogo.png" alt="Facebook">
         </a>
         <a href="https://www.instagram.com/" class="social-icon">
-          <img src="images/InstagramLogo.png" alt="Instagram">
+          <img src="../images/InstagramLogo.png" alt="Instagram">
         </a>
         <a href="https://twitter.com/home" class="social-icon">
-          <img src="images/TwitterLogo.png" alt="Twitter">
+          <img src="../images/TwitterLogo.png" alt="Twitter">
         </a>
         <a href="https://www.youtube.com/" class="social-icon">
-          <img src="images/YouTubeLogo.png" alt="YouTube">
+          <img src="../images/YouTubeLogo.png" alt="YouTube">
         </a>
       </div>
       <div>

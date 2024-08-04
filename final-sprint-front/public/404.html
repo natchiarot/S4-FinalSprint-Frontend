@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume Search</title>
+  <title>404 Not Found</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -60,43 +59,31 @@
     </div>
   </header>
 
-  <main>
-    <div class="outer-container">
-      <div class="inner-container1">
-        <div class="inco1">
-          <h2>Resumé Search</h2>
-          <form action="/resumes/search" method="GET">
-            <label class="searchLabel" for="search">Search by keyword:</label>
-            <input type="text" id="search" name="query" />
-            <label class="searchLabel" for="search-job">Search by job ID:</label>
-            <input type="text" id="search-job" name="job" />
-            <label class="searchLabel" for="database">Database:</label>
-            <select id="database" name="target">
-              <option value="pg">PostgreSQL</option>
-              <option value="m">MongoDB</option>
-              <option value="all">Both</option>
-            </select>
-            <button type="submit">Search</button>
-          </form>
+  <div class="outer-container">
+    <div class="inner-container">
+      <main>
+        <div class="notfound">
+          <h1>404</h1>
+          <img src="images/404.jpg" alt="404 error" width="350" height="400" />
         </div>
-      </div>
+      </main>
     </div>
-  </main>
+  </div>
 
   <footer>
     <div class="footercontentA">
       <div class="social-links">
         <a href="https://www.facebook.com/" class="social-icon">
-          <img src="images/FacebookLogo.png" alt="Facebook">
+          <img src="../images/FacebookLogo.png" alt="Facebook">
         </a>
         <a href="https://www.instagram.com/" class="social-icon">
-          <img src="images/InstagramLogo.png" alt="Instagram">
+          <img src="../images/InstagramLogo.png" alt="Instagram">
         </a>
         <a href="https://twitter.com/home" class="social-icon">
-          <img src="images/TwitterLogo.png" alt="Twitter">
+          <img src="../images/TwitterLogo.png" alt="Twitter">
         </a>
         <a href="https://www.youtube.com/" class="social-icon">
-          <img src="images/YouTubeLogo.png" alt="YouTube">
+          <img src="../images/YouTubeLogo.png" alt="YouTube">
         </a>
       </div>
       <div>
@@ -118,6 +105,5 @@
       </div>
     </div>
   </footer>
-  <script src="script.js"></script>
 </body>
 </html>

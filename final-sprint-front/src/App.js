@@ -1,19 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HTMLPage from './HTMLPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="/404.html">Index</a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<HTMLPage filePath="/home.html" />} />
+      <Route path="/alert" element={<HTMLPage filePath="/alert.html" />} />
+      <Route path="/signin" element={<HTMLPage filePath="/signin.html" />} />
+      <Route path="/signup" element={<HTMLPage filePath="/signup.html" />} />
+      <Route path="/resume-search" element={<HTMLPage filePath="/resumeSearch.html" />} />
+      <Route path="/resume-search-results" element={<HTMLPage filePath="/resumeSearchResults.html" />} />
+      <Route path="/resume-view" element={<HTMLPage filePath="/resumeView.html" />} />
+      <Route path="*" element={<HTMLPage filePath="/404.html" />} />
+    </Routes>
+  </Router>
+);
 
 export default App;
