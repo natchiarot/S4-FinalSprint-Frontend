@@ -87,7 +87,7 @@ const SignupPage = () => {
               <br />
               <p>
                 By creating an account you agree to our
-                <a href="#" class="signin-link">
+                <a href="/README.md" class="signin-link">
                   Terms & Privacy
                 </a>
                 .
@@ -100,7 +100,7 @@ const SignupPage = () => {
           <div class="container signin">
             <p>
               Already have an account?{" "}
-              <a href="#" class="signin-link">
+              <a href="/SigninPage" class="signin-link">
                 Sign in
               </a>
               .
