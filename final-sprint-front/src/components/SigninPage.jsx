@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const SigninPage = () => {
   return (
     <main>
@@ -34,10 +36,10 @@ const SigninPage = () => {
 
             <div class="signin">
               <p>
-                Don't have an account?
-                <a href="/users/signUp" class="signin-link">
+                Don't have an account?{" "}
+                <Link to="/users/signUp" className="signin-link">
                   Sign up
-                </a>
+                </Link>
                 .
               </p>
             </div>
