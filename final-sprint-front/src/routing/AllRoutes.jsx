@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import FrontPage from "../components/FrontPage";
 import SigninPage from "../components/SigninPage";
 import SignupPage from "../components/SignupPage";
+import Error404 from "../components/Error404";
 
 const AllRoutes = () => {
   const { token } = useAuth();
@@ -64,6 +65,17 @@ const AllRoutes = () => {
     ...publicRoutes,
     ...(!token ? unauthenticedOnlyRoutes : []),
     ...authenticatedRoutes, //These routes are always included, as they are protected by the ProtectedRoute
+    ...[
+      {
+        path: "*",
+        element: (
+          <>
+            <Header />
+            <Error404 />
+          </>
+        ),
+      },
+    ],
   ]);
 
   return <RouterProvider router={router} />;

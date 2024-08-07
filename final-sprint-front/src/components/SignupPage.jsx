@@ -88,10 +88,10 @@ const SignupPage = () => {
               <hr />
               <br />
               <p>
-                By creating an account you agree to our
-                <a href="#" class="signin-link">
-                  Terms & Privacy
-                </a>
+                By creating an account you agree to our{" "}
+                <Link className="signin-link">
+                  Terms & Conditions and Privacy Policy
+                </Link>
                 .
               </p>
               <button type="submit" class="registerbtn">
