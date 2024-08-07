@@ -6,23 +6,23 @@ import youtubeLogo from "../images/YouTubeLogo.png";
 const Footer = () => {
   return (
     <footer>
-      <div class="footercontentA">
-        <div class="social-links">
-          <a href="https://www.facebook.com/" class="social-icon">
+      <div className="footercontentA">
+        <div className="social-links">
+          <a href="https://www.facebook.com/" className="social-icon">
             <img src={facebookLogo} alt="Facebook" />
           </a>
-          <a href="https://www.instagram.com/" class="social-icon">
+          <a href="https://www.instagram.com/" className="social-icon">
             <img src={instagramLogo} alt="Instagram" />
           </a>
-          <a href="https://twitter.com/home" class="social-icon">
+          <a href="https://twitter.com/home" className="social-icon">
             <img src={twitterLogo} alt="Twitter" />
           </a>
-          <a href="https://www.youtube.com/" class="social-icon">
+          <a href="https://www.youtube.com/" className="social-icon">
             <img src={youtubeLogo} alt="Youtube" />
           </a>
         </div>
         <div>
-          <p class="footercontentB">
+          <p className="footercontentB">
             &copy; 2024 - MIT License
             <br />
             <a
@@ -48,12 +48,12 @@ const Footer = () => {
             </a>
           </p>
         </div>
-        <div class="copyright">
+        <div className="copyright">
           &trade; 2024 Money4Lifeforce Ltd. All rights are reserved.
         </div>
       </div>
-      <div class="footercontentB">
-        <div class="back-to-top">
+      <div className="footercontentB">
+        <div className="back-to-top">
           <a href="#top" id="backToTopBtn">
             Back to Top
           </a>

@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 const SignupPage = () => {
   return (
     <main>
-      <div class="outer-container1">
-        <div class="inner-container">
+      <div className="outer-container1">
+        <div className="inner-container">
           <form action="/users/signUp" method="post">
-            <div class="container">
+            <div className="container">
               <h1>New User Sign Up</h1>
 
-              <label for="username">
+              <label htmlFor="username">
                 <b>Username</b>
               </label>
               <input
@@ -20,7 +20,7 @@ const SignupPage = () => {
                 required
               />
 
-              <label for="position">
+              <label htmlFor="position">
                 <b>Position</b>
               </label>
               <input
@@ -31,7 +31,7 @@ const SignupPage = () => {
                 required
               />
 
-              <label for="email">
+              <label htmlFor="email">
                 <b>Email</b>
               </label>
               <input
@@ -42,7 +42,7 @@ const SignupPage = () => {
                 required
               />
 
-              <label for="phone">
+              <label htmlFor="phone">
                 <b>Phone Number</b>
               </label>
               <input
@@ -53,7 +53,7 @@ const SignupPage = () => {
                 required
               />
 
-              <label for="location">
+              <label htmlFor="location">
                 <b>Location</b>
               </label>
               <input
@@ -64,7 +64,7 @@ const SignupPage = () => {
                 required
               />
 
-              <label for="psw">
+              <label htmlFor="psw">
                 <b>Password</b>
               </label>
               <input
@@ -75,7 +75,7 @@ const SignupPage = () => {
                 required
               />
 
-              <label for="psw-repeat">
+              <label htmlFor="psw-repeat">
                 <b>Repeat Password</b>
               </label>
               <input
@@ -94,12 +94,12 @@ const SignupPage = () => {
                 </Link>
                 .
               </p>
-              <button type="submit" class="registerbtn">
+              <button type="submit" className="registerbtn">
                 Sign Up
               </button>
             </div>
           </form>
-          <div class="signin">
+          <div className="signin">
             <p>
               Already have an account?{" "}
               <Link to="/users/signIn" className="signin-link">

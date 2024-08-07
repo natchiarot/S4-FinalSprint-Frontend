@@ -3,23 +3,23 @@ import LoggedOutNav from "./LoggedOutNav";
 const Header = () => {
   return (
     <header>
-      <div class="header-container">
-        <div class="header">
-          <div class="titleblock">
-            <h1 class="website-name">PrecisionHire Pro</h1>
-            <blockquote class="slogan">
+      <div className="header-container">
+        <div className="header">
+          <div className="titleblock">
+            <h1 className="website-name">PrecisionHire Pro</h1>
+            <blockquote className="slogan">
               “Welcome to efficient hiring!”
             </blockquote>
           </div>
-          <div class="btns-containerAnB">
-            <div class="btns-containerA">
+          <div className="btns-containerAnB">
+            <div className="btns-containerA">
               {/* Navigation based on location and user */}
               <LoggedOutNav />
             </div>
           </div>
         </div>
-        <div class="user-section">
-          <div class="welcome-message">{/* Username / login link */}</div>
+        <div className="user-section">
+          <div className="welcome-message">{/* Username / login link */}</div>
         </div>
       </div>
     </header>

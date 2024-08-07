@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 const SigninPage = () => {
   return (
     <main>
-      <div class="outer-container">
-        <div class="inner-container">
+      <div className="outer-container">
+        <div className="inner-container">
           <form action="/users/signIn" method="post">
-            <div class="container">
+            <div className="container">
               <h1>Sign In</h1>
               <hr />
-              <label for="username">
+              <label htmlFor="username">
                 <b>Username</b>
               </label>
               <input
@@ -19,7 +19,7 @@ const SigninPage = () => {
                 required
               />
 
-              <label for="password">
+              <label htmlFor="password">
                 <b>Password</b>
               </label>
               <input
@@ -29,12 +29,12 @@ const SigninPage = () => {
                 required
               />
 
-              <button type="submit" class="registerbtn">
+              <button type="submit" className="registerbtn">
                 Sign In
               </button>
             </div>
 
-            <div class="signin">
+            <div className="signin">
               <p>
                 Don't have an account?{" "}
                 <Link to="/users/signUp" className="signin-link">

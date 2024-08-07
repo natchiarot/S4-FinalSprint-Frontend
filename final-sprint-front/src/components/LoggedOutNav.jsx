@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const LoggedOutNav = () => {
   return (
-    <nav class="btns-containerA">
+    <nav className="btns-containerA">
       <Link to="/" className="btnA">
         Home
       </Link>
