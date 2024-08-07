@@ -7,6 +7,7 @@ import FrontPage from "../components/FrontPage";
 import SigninPage from "../components/SigninPage";
 import SignupPage from "../components/SignupPage";
 import Error404 from "../components/Error404";
+import SearchPage from "../components/SearchPage";
 
 const AllRoutes = () => {
   const { token } = useAuth();
@@ -32,7 +33,12 @@ const AllRoutes = () => {
       children: [
         {
           path: "/search",
-          element: <div>Future site of the resume search page</div>,
+          element: (
+            <>
+              <Header />
+              <SearchPage />
+            </>
+          ),
         },
       ],
     },
