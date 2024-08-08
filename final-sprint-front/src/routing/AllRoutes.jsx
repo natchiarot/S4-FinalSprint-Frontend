@@ -32,7 +32,7 @@ const AllRoutes = () => {
       element: <ProtectedRoute />,
       children: [
         {
-          path: "/search",
+          path: "/resumes",
           element: (
             <>
               <Header />

@@ -1,6 +1,11 @@
 import LoggedOutNav from "./LoggedOutNav";
+import LoggedInNav from "./LoggedInNav";
+import UserPanel from "./UserPanel";
+import { useAuth } from "../providers/AuthProvider";
 
 const Header = () => {
+  const { token } = useAuth();
+
   return (
     <header>
       <div className="header-container">
@@ -13,14 +18,11 @@ const Header = () => {
           </div>
           <div className="btns-containerAnB">
             <div className="btns-containerA">
-              {/* Navigation based on location and user */}
-              <LoggedOutNav />
+              {token ? <LoggedInNav /> : <LoggedOutNav />}
             </div>
           </div>
         </div>
-        <div className="user-section">
-          <div className="welcome-message">{/* Username / login link */}</div>
-        </div>
+        <UserPanel />
       </div>
     </header>
   );
