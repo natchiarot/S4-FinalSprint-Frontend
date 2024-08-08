@@ -2,10 +2,10 @@ import errorImage from "../images/404.jpg";
 
 const Error404 = () => {
   return (
-    <div class="outer-container">
-      <div class="inner-container">
+    <div className="outer-container">
+      <div className="inner-container">
         <main>
-          <div class="notfound">
+          <div className="notfound">
             <h1>404</h1>
             <img
               src={errorImage}
