@@ -1,26 +1,28 @@
 import LoggedOutNav from "./LoggedOutNav";
+import LoggedInNav from "./LoggedInNav";
+import UserPanel from "./UserPanel";
+import { useAuth } from "../providers/AuthProvider";
 
 const Header = () => {
+  const { token } = useAuth();
+
   return (
     <header>
-      <div class="header-container">
-        <div class="header">
-          <div class="titleblock">
-            <h1 class="website-name">PrecisionHire Pro</h1>
-            <blockquote class="slogan">
+      <div className="header-container">
+        <div className="header">
+          <div className="titleblock">
+            <h1 className="website-name">PrecisionHire Pro</h1>
+            <blockquote className="slogan">
               “Welcome to efficient hiring!”
             </blockquote>
           </div>
-          <div class="btns-containerAnB">
-            <div class="btns-containerA">
-              {/* Navigation based on location and user */}
-              <LoggedOutNav />
+          <div className="btns-containerAnB">
+            <div className="btns-containerA">
+              {token ? <LoggedInNav /> : <LoggedOutNav />}
             </div>
           </div>
         </div>
-        <div class="user-section">
-          <div class="welcome-message">{/* Username / login link */}</div>
-        </div>
+        <UserPanel />
       </div>
     </header>
   );
