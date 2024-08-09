@@ -1,6 +1,7 @@
 import { useAuth } from "../providers/AuthProvider";
 import { useState } from "react";
 import axios from "axios";
+import { decodeToken } from "react-jwt";
 
 import { SERVER } from "../providers/Constants";
 
@@ -8,10 +9,11 @@ import SearchResults from "./SearchResults";
 
 const SearchPage = () => {
   const { token } = useAuth();
+  const decodedToken = decodeToken(token);
   const [formData, setFormData] = useState({
     query: "",
     job: "",
-    _token: token,
+    username: decodedToken.username,
   });
 
   const [error, setError] = useState(null);
