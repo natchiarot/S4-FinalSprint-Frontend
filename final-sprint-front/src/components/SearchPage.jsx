@@ -1,22 +1,74 @@
 import { useAuth } from "../providers/AuthProvider";
+import { useState } from "react";
+import axios from "axios";
 import { decodeToken } from "react-jwt";
+
+import { SERVER } from "../providers/Constants";
+
+import SearchResults from "./SearchResults";
 
 const SearchPage = () => {
   const { token } = useAuth();
   const decodedToken = decodeToken(token);
+  const [formData, setFormData] = useState({
+    query: "",
+    job: "",
+    username: decodedToken.username,
+  });
 
+  const [error, setError] = useState(null);
+  const [resumes, setResumes] = useState(null);
+  const [buttonDisable, setButtonDisable] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      setButtonDisable("disabled");
+      const response = await axios.post(SERVER + "/resumes/search", formData);
+      setResumes(response.data);
+      setButtonDisable(null);
+    } catch (error) {
+      setButtonDisable(null);
+      if (error.response) setError(error.response.data);
+    }
+  };
   return (
-    <div>
-      Future location of the resume search form.
-      <br />
-      This page required an authentication token.
-      <br />
-      <b>Username: </b>
-      <span>{decodedToken && decodedToken.username}</span>
-      <br />
-      <b>Username: </b>
-      <span>{decodedToken && decodedToken.email}</span>
-    </div>
+    <main>
+      <div className="outer-container">
+        <div className="inner-container1">
+          <div className="inco1">
+            <h2>Resumé Search</h2>
+            <form onSubmit={handleSubmit}>
+              <label className="searchLabel" htmlFor="search">
+                Search by keyword:
+              </label>
+              <input
+                type="text"
+                id="search"
+                name="query"
+                value={formData.query}
+                onChange={handleChange}
+              />
+              <br />
+              <br />
+              <button type="submit" disabled={buttonDisable}>
+                Search
+              </button>
+              {error && { error }}
+            </form>
+          </div>
+          {resumes && <SearchResults resumes={resumes} />}
+        </div>
+      </div>
+    </main>
   );
 };
 
