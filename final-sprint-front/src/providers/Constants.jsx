@@ -1,1 +1,2 @@
-export const SERVER = "http://localhost:8080";
+export const SERVER =
+  "http://finalsprint-env.eba-26pureud.us-east-1.elasticbeanstalk.com";
