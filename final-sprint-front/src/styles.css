@@ -552,9 +552,12 @@ textarea {
   overflow-y: scroll;
 }
 
-.match {
+.formError {
+  background-color: #a00;
+  margin: 8px;
+  padding: 12px 8px;
   font-weight: bold;
-  color: #d00;
+  border-radius: 8px;
 }
 
 @media screen and (max-width: 1800px) {

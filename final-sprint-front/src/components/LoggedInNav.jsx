@@ -7,7 +7,7 @@ const LoggedInNav = () => {
 
   const logOut = () => {
     setToken(null);
-    navigate("/");
+    navigate("/users/signOut/success");
   };
 
   return (
