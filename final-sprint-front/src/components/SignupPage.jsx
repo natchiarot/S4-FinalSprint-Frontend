@@ -33,7 +33,7 @@ const SignupPage = () => {
     try {
       await axios.post(SERVER + "/users/signUp", formData);
       // Successful login response body contains the JWT
-      navigate("/", { replace: true });
+      navigate("/users/signUp/success", { replace: true });
     } catch (error) {
       // Responses to unsuccessful login attempts will contain an error message
       if (error.response) setError(error.response.data);
@@ -147,7 +147,7 @@ const SignupPage = () => {
                 </Link>
                 .
               </p>
-              {errorMessage && <div>{errorMessage}</div>}
+              {errorMessage && <div className="formError">{errorMessage}</div>}
               <button type="submit" className="registerbtn">
                 Sign Up
               </button>

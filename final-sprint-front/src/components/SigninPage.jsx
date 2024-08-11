@@ -31,7 +31,7 @@ const SigninPage = () => {
       const response = await axios.post(SERVER + "/users/login", formData);
       // Successful login response body contains the JWT
       setToken(response.data);
-      navigate("/", { replace: true });
+      navigate("/users/signIn/success", { replace: true });
     } catch (error) {
       // Responses to unsuccessful login attempts will contain an error message
       if (error.response) setError(error.response.data);
@@ -70,10 +70,10 @@ const SigninPage = () => {
                 required
               />
 
+              {errorMessage && <div className="formError">{errorMessage}</div>}
               <button type="submit" className="registerbtn">
                 Sign In
               </button>
-              {errorMessage && <div>{errorMessage}</div>}
             </div>
 
             <div className="signin">
